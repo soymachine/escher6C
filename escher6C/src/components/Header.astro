@@ -1,0 +1,92 @@
+---
+import ExercicesIcon from '../components/icons/ExercicesIcon.astro';
+import RoutineIcon from '../components/icons/RoutineIcon.astro';
+---
+<div class="header-wrapper">
+    <a class="menu-item menu-item-selected" href="#">
+        <div class="menu-item-wrapper" id="menu-item-exercices">
+            <div class="menu-item-icon">
+                <ExercicesIcon />
+            </div>
+            <div class="menu-item-info">
+                <div class="menu-item-total">10</div>
+                <div class="menu-item-title">exercices</div>
+            </div>
+        </div>
+    </a>
+    <a class="menu-item" href="#">
+        <div class="menu-item-wrapper" id="menu-item-routine">
+            <div class="menu-item-icon">
+                <RoutineIcon />
+            </div>
+            <div class="menu-item-info">
+                <div class="menu-item-total">0</div>
+                <div class="menu-item-title">routines</div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<style>
+
+    /* wrapper that centers the content in the middle of the screen */
+    .header-wrapper{
+        color:#595959;
+        position: sticky; 
+        top: 0;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: white;  
+        margin-bottom:20px;
+        /* add a slight shadow */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        /* sticky header */
+    }
+
+    .menu-item {
+        padding:10px;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .menu-item-selected {
+        background-color: #8c82fd;
+        color:white;
+    }
+
+    .menu-item-wrapper {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap:10px;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    /* border right only for the first item */
+    .menu-item:first-child {
+        /*border-right: 1px solid black;*/
+    }
+
+    .menu-item-info {
+        margin-top: -10px;
+    }
+
+    .menu-item-total {
+        font-weight:bold;
+        /*color:#595959;*/
+        font-size:30px;
+    }
+
+    .menu-item-title {
+        font-size:14px;
+        margin-top: -10px;
+    }
+
+    .menu-item-icon {
+        width: 40px;
+        display: grid;
+        align-content: center;
+    }
+
+</style>

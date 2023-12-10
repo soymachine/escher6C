@@ -1,0 +1,34 @@
+---
+import Item from '../components/Item.astro';
+import List from '../components/List.jsx';
+
+const items = [
+    {
+        title:"Pullups",
+        video:"eGo4IYlbE5g?si=LYEMPl48zJjM-O21",
+        categories:"upperbody, core",
+        added:true
+    },
+    {
+        title:"Squats",
+        video:"gsNoPYwWXeM?si=N9_3XUc-MEMWoghq",
+        categories:"lowerbody",
+        added:false
+    },
+    {
+        title:"Abs",
+        video:"uUKAYkQZXko?si=pe3PZjcccaLJ1TxS",
+        categories:"core",
+        added:false
+    },
+    {
+        title:"Biceps",
+        video:"RtHkWCTOvC0?si=mrcJ3S4eudPoCjRJ",
+        categories:"upperbody",
+        added:false
+    }
+]
+---
+<div id="item-list">
+    <List client:load initialItems={items} />
+</div>
