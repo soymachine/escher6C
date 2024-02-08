@@ -3,7 +3,7 @@ import ExercicesIcon from '../components/icons/ExercicesIcon.astro';
 import RoutineIcon from '../components/icons/RoutineIcon.astro';
 ---
 <div class="header-wrapper">
-    <a class="menu-item menu-item-selected" href="#">
+    <a id="menu-item-exercices" class="menu-item menu-item-selected" href="#">
         <div class="menu-item-wrapper" id="menu-item-exercices">
             <div class="menu-item-icon">
                 <ExercicesIcon />
@@ -14,7 +14,7 @@ import RoutineIcon from '../components/icons/RoutineIcon.astro';
             </div>
         </div>
     </a>
-    <a class="menu-item" href="#">
+    <a id="menu-item-routines" class="menu-item" href="#">
         <div class="menu-item-wrapper" id="menu-item-routine">
             <div class="menu-item-icon">
                 <RoutineIcon />
@@ -26,7 +26,33 @@ import RoutineIcon from '../components/icons/RoutineIcon.astro';
         </div>
     </a>
 </div>
+<script>
+    const $exercicesList = document.getElementById("item-list");
+    const $routinesList = document.getElementById("item-routine");
 
+    // Hide the routines list by default
+    $routinesList.style.display = "none";
+
+    const itemExercices = document.getElementById("menu-item-exercices");
+    const itemRoutines = document.getElementById("menu-item-routines");
+    itemExercices.addEventListener("click", () => {
+        $exercicesList.style.display = "block";
+        $routinesList.style.display = "none";
+
+        
+        itemRoutines.classList.remove("menu-item-selected");
+        itemExercices.classList.add("menu-item-selected");
+    })
+
+    itemRoutines.addEventListener("click", () => {
+        $exercicesList.style.display = "none";
+        $routinesList.style.display = "block";
+
+        itemExercices.classList.remove("menu-item-selected");
+        itemRoutines.classList.add("menu-item-selected");
+    })
+
+</script>
 <style>
 
     /* wrapper that centers the content in the middle of the screen */
